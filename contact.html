@@ -46,17 +46,17 @@
             </div>
     </header>
 
-    <div style="display: flex;">
+    <div class="body">
         <aside>
             <div class="contacts">
-                <p>contacts</p>
+                <p class="list-name">contacts</p>
                 <div class="user-phone">
                     <div><i class="fa-solid fa-envelope"></i> <p>men3m1232006@gmail.com</p></div>
                     <div><i class="fa-solid fa-phone"></i> <p>+201017076765</p></div>
                 </div>
             </div>
             <div class="find-me-in">
-                <p>find-me-also-in</p>
+                <p class="list-name">find-me-also-in</p>
                 <div class="social">
                     <div class="socials">
                         <i class="fa-solid fa-up-right-from-square"></i>
@@ -80,38 +80,45 @@
 
         <section>
             <div class="empty"></div>
-            <div class="message">
-                <form>
-                    <div>
-                        <label for="name">_name:</label>
-                        <input type="text" name="name">
-                    </div>
-                    <div>
-                        <label for="email">_email</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div>
-                        <label for="message">_message</label>
-                        <input type="text" name="message" placeholder="your message here ..." class="the-message">
-                    </div>
-                    <input type="button" value="sumbit message">
-                </form>
+            <div class="message-js-section">
+                <div class="message">
+                    <form>
+                        <div>
+                            <label for="name">_name:</label>
+                            <input type="text" name="name" >
+                        </div>
+                        <div>
+                            <label for="email">_email</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div>
+                            <label for="message">_message</label>
+                            <textarea type="text" name="message" placeholder="your message here ..." class="the-message"></textarea>
+                        </div>
+                        
+                        <input type="button" value="sumbit message">
+                    </form>
+                </div>
+                <div class="js">
+                    
+                        <div><p class="num">1</p>
+                        <div class="js-container"><span style="color: #C27AFF;">const </span><p style="color: #615FFF;">button <span>=</span> document <span>.</span>querySelector</p><p>(<p><span>'#sendBtn'</span><p>);</p></div>
+                        </div>
+                        <div><p class="num">2</p> </div>
+                        <div><p class="num">3</p><div class="js-container"> <span style="color:#C27AFF">const</span> message <p>=</p> <p>{</p></div></div>
+                        <div><p class="num">4</p><div class="js-container"> name: <span>"Jonathan Davis"</span> <p>,</span></div></div>
+                        <div><p class="num">5</p><div class="js-container"> email: <span>"jonathan-davis@gmail.com"</span><p>,</p></div></div>
+                        <div class="message-js"><p class="num">6</p><div class="js-container"> message: <span>"Hey! Just checked your website and it looks <span>awesome! Also, I checked your articled on Medium, Learned <span>few nice tips. Than|"</span></span><p>,</p></div></div>
+                        <div><p class="num">7</p><div class="js-container"> date: <span>"Thu 21 Apr"</span></div></div>
+                        <div><p class="num">8</p><div class="js-container"> <p>}</p></div></div>
+                        <div><p class="num">9</p><div class="js-container"> </div></div>
+                        <div><p class="num2">10</p><div class="js-container"> button<p>.</p>addEventListener<p>(</p><span> 'click'<p>, ( )</p></span><span style="color:#C27AFF"> => </span><p>{</p></div></div>
+                        <div><p class="num2">11</p><div class="js-container"> form<p>.</p>send <p>(</p> message <p>);</p></div></div>
+                        <div><p class="num2">12</p><div class="js-container"> <p>})</p></div></div>
+                    
+                </div>
+                <div style="width: 42px;" class="side-zone"><div></div></div>
             </div>
-            <div class="js">
-                <div><p class="num">1</p> <span style="color:#C27AFF">const</span> button <p>=</p> document.querySelector <span><p>(</p> '#sendBtn' <p>);</p></span> </div>
-                <div><p class="num">2</p> </div>
-                <div><p class="num">3</p> <span style="color:#C27AFF">const</span> message <p>=</p> <p>{</p></div>
-                <div><p class="num">4</p> name: <span>"Jonathan Davis"</span> <p>,</sppan></div>
-                <div><p class="num">5</p> email: <span>""</span><p>,</p></div>
-                <div><p class="num">6</p> message: <span>"</span><p>,</p></div>
-                <div><p class="num">7</p> date: <span>"Thu 21 Apr"</span></div>
-                <div><p class="num">8</p> <p>}</p></div>
-                <div><p class="num">9</p> </div>
-                <div><p class="num2">10</p> button<p>.</p>addEventListener<p>(</p><span> 'click'<p>, ( )</p></span><span style="color:#C27AFF"> => </span><p>{</p></div>
-                <div><p class="num2">11</p> form<p>.</p>send <p>(</p> message <p>);</p></div>
-                <div><p class="num2">12</p> <p>})</p></div>
-            </div>
-            <div></div>
         </section>
     </div>
 
@@ -133,8 +140,11 @@
         </div>
         <div class="rigth-side">
             <li>
-                <a href="https://github.com/men3m111">
+                <a href="https://github.com/men3m111" class="git-user">
                     @men3m111 <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://github.com/men3m111" class="git-icon">
+                    <i class="fa-brands fa-github"></i>
                 </a>
             </li>
         </div>
