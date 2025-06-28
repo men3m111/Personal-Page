@@ -35,6 +35,14 @@ header {
     position: absolute;
     left: 20px;
 }
+.logo:hover {
+    color: #fff;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
 .logo::after {
     content: '';
     position: absolute;
@@ -68,7 +76,7 @@ header nav {
     width: 85%;
     position: relative;
     top: 0;
-    left: 200px;
+    left: 209px;
     z-index: 1;
 }
 header nav ul{
@@ -168,6 +176,11 @@ header .icon span {
 
 
 /* Responsive */
+@media (max-width: 1024px) {
+    nav {
+        margin-left: -50px;
+    }
+}
 @media (max-width: 843px) {
     header nav{
         margin-left: -150px
@@ -213,19 +226,19 @@ header .icon span {
         cursor: pointer;
     }
     .links:hover ul {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--text-color);
-    position: absolute;
-    bottom: 0;
-    right: -280px;
-    color: #fff;
-    top: 30px;
-    padding: 0px;
-    height: 155px;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: 0;
+        right: -280px;
+        color: #fff;
+        top: 30px;
+        padding: 0px;
+        height: 155px;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
     }
     .links:hover ul::before {
         content: '';
@@ -304,6 +317,33 @@ header .icon span {
         top: 2px;
         cursor: pointer;
     }
+    .links:hover ul {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        top: 40px;
+        left: -20px;
+        padding: 0px;
+        height: 155px;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        z-index: 999;
+    }
+    .links:hover ul::before {
+        content: '';
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 12px solid var(--text-color);
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: -11px;
+        right: 0;
+    }
 }
 @media (max-width: 375px) {
     .links .icon {
@@ -316,6 +356,33 @@ header .icon span {
         position: relative;
         right: -140px;
         cursor: pointer;
+    }
+    .links:hover ul {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        top: 40px;
+        left: -50px;
+        padding: 0px;
+        height: 155px;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        z-index: 999;
+    }
+    .links:hover ul::before {
+        content: '';
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 12px solid var(--text-color);
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: -11px;
+        right: 0;
     }
 }
 
@@ -383,4 +450,44 @@ footer .rigth-side a:hover {
     -moz-transition: all ease 0.3s;
     -ms-transition: all ease 0.3s;
     -o-transition: all ease 0.3s;
+}
+footer .git-icon {
+    display: none;
+}
+@media (max-width: 375px) {
+    footer {
+        display: flex;
+    }
+    .find-me {
+        flex-grow: 0;
+    }
+    .left-side {
+        flex-grow: 8;
+    }
+    .right-side {
+        flex-grow: 1;
+    }
+    .rigth-side li::before {
+        display: none;
+    }
+}
+@media (max-width: 325px) {
+    footer {
+        display: flex;
+    }
+    .find-me {
+        flex-grow: 0;
+    }
+    .left-side {
+        flex-grow: 2;
+    }
+    .git-user{
+        display: none;
+    }
+    footer  .git-icon {
+        display: block;
+        margin-right: 25px;
+        margin-top: -10px;
+        font-size: 35px;
+    }
 }
