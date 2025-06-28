@@ -1,229 +1,264 @@
 .about-page {
-    display: flex;
+    display: grid;
+    grid-template-columns: 310px 300px 300px;
 }
 aside {
-    width: 302px;
-    height: calc(100vh - 50px);
-    border-right: 1px solid var(--text-color);
-}
-.side-icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url(../svg/Vector.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.side-icon2 {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url(../svg/Vector\ \(8\).svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.side-icon3 {
-    display: inline-block;
-    width: 28px;
-    height: 20px;
-    background-image: url(../svg/Vector\ \(7\).svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.div-one,
-.div-two,
-.div-three,
-.div-four {
-    color: #fff;
-}
-
-aside .about-side {
     display: grid;
-    grid-template-rows: 50px 100px;
-    grid-template-columns: 70px 1fr;
-}
-aside .div-one {
+    grid-template-columns: 67px calc(310px - 67px);
     border-right: 1px solid var(--text-color);
 }
-aside .div-two {
-    border-bottom: 1px solid var(--text-color);
-    position: relative;
-    cursor: pointer;
-}
-aside .div-one,
-aside .div-two {
-    grid-row: 1 / 2;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-aside .div-four {
-    position: relative;
-    cursor: pointer;
-    grid-row: 2 / 3;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid var(--text-color);
-}
-aside .div-two::before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 6px solid #fff;
-    position: absolute;
-    top: 24px;
-    left: 50px;
-}
-aside .div-four::before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 8px solid #fff;
-    position: absolute;
-    top: 26px;
-    left: 63px;
-    transform: translateY(-50%);
-}
-
-
-
-.div-three {
-    border-right: 1px solid var(--text-color);
-}
-aside .information {
+.div-two-hidden {
     display: none;
 }
-aside .about-side:hover .information{
-    display: block;
-    position: absolute;
-    top: 40px;
-    left: 0;
-    padding: 25px 25px 20px;
-    color: var(--text-color);
-}
-aside .information div {
-    display: flex;
-    cursor: pointer;
-
-}
-aside .information .infos div:hover,
-aside .information .edu p:hover,
-aside .information .edu .the-edu div:hover {
-    color: #fff;
-}
-aside .about-side:hover .div-four {
-    margin-top: 120px;
-}
-
-aside .about-side .the-edu {
+.information,
+.contact-list {
     display: none;
 }
-aside .about-side .edu i + div:hover .the-edu {
+
+.div-one {
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 0;
+    border-right: 1px solid var(--text-color);
+}
+
+.div-one i {
+    flex-basis: 60px;
+    margin-top: 15px;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.div-one i:hover {
+    color: #fff;
     transition: 0.3s;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
-    
 }
-aside .about-side .edu:hover .arrow {
+
+
+.div-two {
+    display: grid;
+    grid-auto-rows: min-content;
+    justify-content: center;
+}
+
+
+.div-two .personal-info,
+.contacts {
+    padding: 20px 10px;
+    width: 241px;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+.div-two .personal-info::after,
+.div-two .contacts::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: -1px;
+    background-color: var(--text-color);
+    height: 1px;
+    width: 244px;
+}
+.div-two div p {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 70%;
+    left: 20px;
+}
+.div-two .contacts p {
+    left: 0px;
+}
+
+.div-two div p::before {
+    content: '';
+    border-left: #fff 5px solid;
+    border-top: transparent 4px solid;
+    border-bottom: transparent 4px solid;
+    position: absolute;
+    left: -10px;
+    top: 6px;
+}
+.div-two div .personal-par::before {
+    content: '';
+    border-left: #fff 5px solid;
+    border-top: transparent 4px solid;
+    border-bottom: transparent 4px solid;
+    position: absolute;
+    left: 0px;
+    top: 6px;
+}
+.div-two .personal-info:hover .personal-par::before,
+.contacts:hover .contact-par::before {
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
-.the-icon {
-    background-image: url(../svg/education.svg);
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-    margin-right: 5px;
-    background-repeat: no-repeat;
-    background-size: cover;
+.div-two .edu .education:before {
+    content: '';
+    border-left: transparent 4.5px solid;
+    border-top: #fff 4px solid;
+    border-right: transparent 4.5px solid;
+    position: absolute;
+    left: -15px;
+    top: 8px;
 }
 
-.infos {
+.div-two .contacts p::before {
+    left: 20px;
+}
+
+.div-two .personal-info {
+    position: relative;
+}
+
+.div-two .personal-info:hover {
+    margin-bottom: 120px;
+}
+
+.div-two .personal-info:hover .information {
     display: flex;
     flex-direction: column;
+    position: absolute;
+    top: 70px;
 }
-.contact-list {
-    display: none;
+
+.div-two .personal-info .information .infos p {
+    justify-content: start;
 }
-.contact-list div {
+
+.infos div {
     display: flex;
-    padding: 10px 10px;
-    color: var(--text-color);
-    cursor: pointer;
-}
-.contact-list div:nth-child(1) {
-    width: 100px;
-}
-.contact-list div:hover {
-    color: #fff;
-}
 
 
-.folder {
+}
+.arrow {
     margin-right: 10px;
 }
-aside .about-side:hover .div-four {
-    border-top: 1px solid var(--text-color);
-}
-aside .about-side:hover .contact-list {
-    display: block;
-}
-aside .div-three {
-    grid-row: 2 / 4;
+.edu .edu-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    position: relative;
+    
 }
-aside .arrow {
-    font-size: 12px;
+.edu i {
+    margin-right: 5px;
+}
+
+.edu-content .the-edu{
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    left: 10px;
-}
-aside .div-three i {
-    margin: 20px 0;
-}
+    top: 20px;
+    right: 0;
 
+}
+.edu-content .the-edu::after {
+    content: '';
+    height: 1px;
+    width: 242px;
+    background-color: var(--text-color);
+    position: absolute;
+    left: -21px;
+    bottom: -10px;
+    
+}
+.contacts:hover p:nth-child(1) {
+    margin-bottom: 20px;
+}
+.contacts:hover p:nth-child(1):after {
+    content: '';
+    height: 1px;
+    width: 242px;
+    background-color: var(--text-color);
+    position: absolute;
+    left: -11px;
+    bottom: -18px;
 
-.edu i + div{
+}
+.contacts:hover .contact-list {
     display: flex;
     flex-direction: column;
+    padding: 20px 0 0;
+    color: var(--text-color);
 }
-
-
-
-
-.the-edu {
+.contacts:hover .contact-list div {
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.contacts:hover .contact-list div:nth-child(2) p {
+    transform: translateX(-30px);
+    -webkit-transform: translateX(-30px);
+    -moz-transform: translateX(-30px);
+    -ms-transform: translateX(-30px);
+    -o-transform: translateX(-30px);
+}
+.contacts:hover .contact-list div:hover {
+    color: #fff;
+}
+.contacts:hover .contact-list div p {
+    margin-left: 10px;
+} 
+.contacts:hover .contact-list div i {
+    margin-left: -20px;
 }
 
+
+
+.contact-list div p::before {
+    display: none;
+}
 
 
 
 .about-content {
     display: grid;
-    grid-template-rows: 50px 1fr;
+    grid-template-rows: 60px 1fr;
     grid-template-columns: 420px 580px 45px;
+}
+
+
+.about-content .edu-section .ddiv {
+    width: 20%;
+    position: relative;
+    border-right: 1px solid var(--text-color);
+}
+
+.about-content .edu-section .ddiv::after {
+    content: '';
+    background-color: var(--text-color);
+    width: 1px;
+    height: 60px;
+    position: absolute;
+    top: -15px;
+    right: 0;
+}
+
+
+.X {
+    position: absolute;
+    right: 0px;
 }
 
 
@@ -238,35 +273,26 @@ aside .div-three i {
     cursor: pointer;
 }
 
-.edu-section {
-    grid-column: 1 / 4;
+.about-content .edu-section .ddiv p {
+    position: absolute;
+    top: 5px;
 }
 
 .about-content .edu-section {
+    grid-column: 1 / 4;
     padding: 15px 20px;
     color: var(--text-color);
     border-bottom: 1px solid var(--text-color);
-}
-.edu-section div:nth-child(1) {
     position: relative;
 }
 
-.edu-section div:nth-child(1)::after {
-    content: '';
-    width: 1px;
-    position: absolute;
-    right: 0;
-    top: -14px;
-    background-color: var(--text-color);
-    height: 48px;
-}
 
 
 .about-content .edu-section .X::before,
 .about-content .edu-section .X::after{
     content: "";
     position: absolute;
-    top: 10px;
+    top: 13px;
     right: 20px;
     width: 12px;
     height: 2px;
@@ -292,6 +318,7 @@ aside .div-three i {
     -o-transform: rotate(-45deg);
 }
 
+
 .me {
     display: flex;
     flex-direction: column;
@@ -300,6 +327,14 @@ aside .div-three i {
 }
 .me div {
     display: flex;
+}
+.me div:hover {
+    color: #fff;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 .me div .num + p,
 .num2 + p {
@@ -360,4 +395,1243 @@ aside .div-three i {
 
 .code p {
     color: var(--text-color);
+}
+
+/* Responsive */
+
+@media (max-width: 2560px) {
+    .about-page {
+        display: grid;
+        grid-template-columns: 825px 460px 1000px;
+    }
+    aside {
+        display: grid;
+        grid-template-columns: 100px calc(825px - 100px);
+    }
+    .div-two {
+        display: none;
+    }
+    .div-two-hidden {
+        display: grid;
+        grid-template-rows: repeat(2, 495px);
+    }
+    .div-two-hidden p:hover {
+        color: #fff;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+    }
+    .personal-info-hidden {
+        display: grid;
+        grid-template-rows: 100px 1fr;
+        border-bottom: 1px solid var(--text-color);
+    }
+    .edu-content .the-edu::after {
+        display: none;
+    }
+    .personal-info-hidden p,
+    .contacts-hidden p  {
+        justify-self: center;
+        align-self: center;
+        color: var(--text-color);
+        font-size: 25px;
+        letter-spacing: 2px;
+        font-weight: 800;
+        position: relative;
+    }
+    .personal-info-hidden .personal-info-para::after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: -260px;
+        background-color: var(--text-color);
+        height: 1px;
+        width: 725px;
+    }
+    .information-hidden {
+        position: relative;
+        left: 100px;
+        padding: 10px;
+    }
+    .information-hidden .infos {
+        position: absolute;
+        top: 50px;
+        left: 70px;
+    }
+    .information-hidden .infos div {
+        margin: 5px 0;
+        display: flex;
+    }
+    .information-hidden .infos div .arrow {
+        color: #fff;
+    }
+    .information-hidden .infos div i {
+        margin-right: 20px;
+    }
+    .information-hidden .infos div p {
+        margin-top: -10px;
+    }
+    .edu .arrow {
+        margin-left: -5px;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+    }
+    .the-edu div p::before {
+        content: '';
+        position: absolute;
+        left: -17px;
+        top: 13px;
+        border-top: transparent 5px solid;
+        border-bottom: transparent 5px solid;
+        border-left: var(--text-color) 10px solid;
+    }
+    .the-edu {
+        width: 250px;
+        left: -150px;
+    }
+    .contacts-hidden {
+        display: grid;
+        grid-template-rows: 100px 1fr;
+        padding: 20px;
+        position: relative;
+    }
+    .contacts-hidden p,
+    .contacts-hidden a {
+        justify-self: center;
+        align-self: center;
+        color: var(--text-color);
+        position: relative;
+    }
+    .contact-par {
+        top: -20px;
+    }
+    .contacts-hidden .contact-par::after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: -295px;
+        background-color: var(--text-color);
+        height: 1px;
+        width: 725px;
+    }
+    .contact-list-hidden {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 180px;
+        left: 50px;
+    }
+    .contact-list-hidden div {
+        display: flex;
+        margin: 15px;
+    }
+    .contact-list-hidden div i {
+        margin-right: 25px;
+        color: var(--text-color);
+        font-size: 30px;
+    }
+    .contact-list-hidden div p {
+        margin-top: 0px;
+    }
+    .contact-list-hidden div:nth-child(2) i {
+        font-size: 40px;
+    }
+    .contacts-hidden a {
+        margin-top: -7px;
+    }
+    .contacts-hidden a {
+        font-size: 30px;
+        font-weight: 800;
+    }
+    .contacts-list-hidden div:hover a,
+    .contacts-list-hidden div:hover i {
+        color: #fff;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+        cursor: pointer;
+    }
+    .about-social:hover a,
+    .about-social:hover i {
+        color: #fff;
+    }
+    .about-content {
+        display: grid;
+        grid-template-columns: 700px 1fr;
+    }
+    .me {
+        width: 600px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+    .ccooddee{
+        width: 991px;
+    }
+}
+
+
+@media (max-width: 1440px) {
+    .about-page {
+        display: grid;
+        grid-template-columns: 318px 400px 1fr;
+    }
+    aside {
+        display: grid;
+        grid-template-columns: 80px calc(440px - 100px);
+    }
+    .div-two {
+        display: grid;
+        grid-auto-rows: min-content;
+        justify-content: center;
+    }
+
+    .div-two-hidden {
+        display: none;
+    }
+    .div-two .personal-info,
+    .div-two .contacts {
+        left: -50px;
+    }
+
+    .div-two .personal-info::after,
+    .div-two .contacts::after {
+        width: 238px;
+    }
+    .div-two .contacts p {
+        top: 2px;
+    }
+    .contacts:hover p:nth-child(1):after {
+        width: 218px;
+    }
+    .about-content {
+        display: grid;
+        grid-template-columns: 400px 680px;
+    }
+    .me {
+        width: 350px;
+        font-size: 15px;
+        font-weight: 200;
+    }
+    .ccooddee{
+        width: 100%;
+    }
+    .the-edu {
+        width: 250px;
+        left: -55px;
+        position: relative;
+    }
+    .the-edu div p::before {
+        content: '';
+        position: absolute;
+        left: -17px;
+        top: 5px;
+        border-top: transparent 4px solid;
+        border-bottom: transparent 4px solid;
+        border-left: #fff 6px solid;
+    }
+    .the-edu::after {
+        display: block;
+        content: '';
+        height: 1px;
+        width: 242px;
+        background-color: var(--text-color);
+        position: absolute;
+        left: -100px;
+        bottom: 0px;
+    
+    }
+}
+
+
+@media(max-width: 1366px) {
+    .about-page {
+        display: grid;
+        grid-template-columns: 311px 370px 1fr;
+    }
+    aside {
+        display: grid;
+        grid-template-columns: 70px calc(311px - 70px);
+    }
+    .div-two-hidden {
+        display: none;
+    }
+    .div-two .personal-info,
+    .div-two .contacts {
+        left: 0px;
+    }
+    .div-two .personal-info::after,
+    .div-two .contacts::after {
+        width: 242px;
+    }
+    .div-two .contacts p {
+        top: 2px;
+    }
+    .contacts:hover p:nth-child(1):after{
+        width: 241px;
+    }
+    .about-content {
+        display: grid;
+        grid-template-columns: 370px 700px;
+    }
+    .me {
+        width: 320px ;
+        font-size: 13px ;
+        font-weight: 300 ;
+    }
+    .ccooddee{
+        width: 87%;
+    }
+    .the-edu {
+        width: 250px;
+        left: -55px;
+        position: relative;
+    }
+    .the-edu div p::before {
+        content: '';
+        position: absolute;
+        left: -17px;
+        top: 5px;
+        border-top: transparent 4px solid;
+        border-bottom: transparent 4px solid;
+        border-left: #fff 6px solid;
+    }
+    .personal-info:hover .the-edu::after {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 1px;
+        width: 241px;
+        background-color: var(--text-color);
+        left: -60px;
+        bottom: -15px;
+    
+    }
+    .contact-list a {
+        color: var(--text-color);
+        
+    }
+    .about-gmail {
+        max-width: 90%;
+    }
+    .about-gmail p {
+        font-size: 14px;
+    }
+    .contact-list .about-social {
+        align-self: start;
+        transform: translateX(20px);
+        -webkit-transform: translateX(20px);
+        -moz-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        -o-transform: translateX(20px);
+    }
+
+    .contact-list .about-social i {
+        margin-right: 15px;
+    }
+}
+@media (max-width: 1265px) {
+    .about-content {
+        display: grid;
+        grid-template-columns: 340px 650px;
+    }
+    .me {
+        width: 320px;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    .ccooddee{
+        width: 87%;
+    }
+}
+@media (max-width: 1195px) {
+    .s-col {
+        width: 30px;
+    }
+    .s-col div {
+        width: 20px;
+        margin-left: -1px;
+    }
+    .about-content {
+        display: grid;
+        grid-template-columns: 350px 640px;
+    }
+    .me {
+        width: 320px ;
+        font-size: 13px ;
+        font-weight: 300 ;
+    }
+    .ccooddee{
+        width: 70% !important;
+        padding: 10px !important;
+        font-size: 12px;
+    }
+    .ccooddee h1 + div {
+        padding: 10px !important;
+    }
+}
+@media (max-width: 1105px) {
+    .about-content {
+        display: grid;
+        grid-template-columns: 290px 580px;
+    }
+    .me {
+        width: 260px ;
+        font-size: 12px ;
+        font-weight: 300 ;
+        padding: 5px;
+    }
+    .ccooddee{
+        width: 70% !important;
+        padding: 10px !important;
+        font-size: 12px;
+    }
+    .ccooddee h1 + div {
+        padding: 10px !important;
+    }
+    .num,
+    .num2 {
+        margin-right: 10px;
+    }
+
+}
+@media (max-width: 1024px) {
+    .about-page {
+        display: grid;
+        grid-template-columns: 262px 737px;
+    }
+    aside {
+        display: grid;
+        grid-template-columns: 50px calc(440px - 100px);
+    }
+    .div-two {
+        display: grid;
+        grid-auto-rows: min-content;
+        justify-content: center;
+    }
+
+    .div-two-hidden {
+        display: none;
+    }
+    .div-two .personal-info,
+    .div-two .contacts {
+        left: -50px;
+    }
+
+    .div-two .personal-info::after,
+    .div-two .contacts::after {
+        width: 215px;
+    }
+    .div-two .contacts p {
+        top: 2px;
+    }
+    .contacts:hover p:nth-child(1):after {
+        width: 213px;
+    }
+    .contact-list a {
+        color: var(--text-color);
+        
+    }
+    .about-gmail {
+        max-width: 90%;
+    }
+    .about-gmail p {
+        font-size: 14px;
+    }
+    .contact-list .about-social {
+        align-self: start;
+        transform: translateX(20px);
+        -webkit-transform: translateX(20px);
+        -moz-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        -o-transform: translateX(20px);
+    }
+    .contact-list .about-social i {
+        margin-left: 15px;
+    }
+    .about-content {
+        display: grid;
+        grid-template-columns: 270px 600px;
+    }
+    .second-col {
+        display: none;
+    }
+    .me {
+        width: 100%;
+        font-size: 12px;
+        font-weight: 200;
+        padding: 5px;
+    }
+    .ccooddee {
+        width: 70%;
+        font-size: 12px;
+    }
+    .edu {
+        margin-left: 15px;
+    }
+    .personal-info:hover .the-edu {
+        width: 250px;
+        left: -90px;
+        position: relative;
+    }
+    .the-edu div p::before {
+        content: '';
+        position: absolute;
+        left: -17px;
+        top: 5px;
+        border-top: transparent 4px solid;
+        border-bottom: transparent 4px solid;
+        border-left: #fff 6px solid;
+    }
+    .personal-info:hover .the-edu::after {
+        display: block;
+        content: '';
+        height: 1px;
+        width: 212px;
+        background-color: var(--text-color);
+        position: absolute;
+        left: -30px;
+        bottom: -15px;
+    
+    }
+    .edu .arrow {
+        position: absolute;
+        top: 35px;
+        left: 5px;
+    }
+    .contacts::after {
+        width: 213px;
+    }
+    .s-col {
+        width: 30px;
+    }
+    .s-col div {
+        width: 20px;
+        margin-left: -1px;
+    }
+    .num,
+    .num2 {
+        margin-right: 10px
+    }
+}
+
+@media (max-width: 950px) {
+    .about-content {
+        display: grid;
+        grid-template-columns: 270px 610px;
+    }
+    .me {
+        width: 230px;
+        font-size: 11px;
+        font-weight: 300;
+        padding: 5px;
+    }
+    .ccooddee{
+        width: 61% !important;
+        padding: 5px !important;
+        font-size: 10.5px;
+    }
+    .ccooddee h1 + div {
+        padding: 0px !important;
+    }
+}
+
+@media (max-width: 915px) {
+    .about-page {
+        height: 83.5vh;
+    }
+    aside {
+        width: 253px;
+    }
+    .about-content {
+        display: grid;
+        grid-template-columns: 220px 610px;
+    }
+    .personal-info:hover .the-edu::after {
+        width: 203px;
+    }
+    .contacts::after {
+        width: 203px;
+    }
+    .contacts:hover p:nth-child(1):after{
+        width: 204px;
+    }
+    .about-gmail p {
+        font-size: 13px;
+        transform:translateX(-5px);
+        -webkit-transform:translateX(-5px);
+        -moz-transform:translateX(-5px);
+        -ms-transform:translateX(-5px);
+        -o-transform:translateX(-5px);
+    }
+
+    .me {
+        width: 225px;
+        font-size: 11px;
+        font-weight: 300;
+        padding: 5px;
+        border-right: 1px solid var(--text-color);
+    }
+    .me::after {
+        content: '';
+        height: 19.5vh;
+        width: 1px;
+    }
+    .ccooddee{
+        width: 60% !important;
+        padding: 5px !important;
+        font-size: 10.5px;
+    }
+    .ccooddee h1 + div {
+        padding: 5px !important;
+    }
+    .s-col {
+        display: none;
+    }
+}
+@media (max-width: 855px) {
+    aside {
+        width: 248px;
+    }
+    .div-two {
+        width: 200px;
+    }
+    .about-content {
+        display: grid;
+        grid-template-columns: 200px 580px;
+    }
+    .personal-info,
+    .contacts {
+        width: 200px;
+        transform: translateX(50px);
+        -webkit-transform: translateX(50px);
+        -moz-transform: translateX(50px);
+        -ms-transform: translateX(50px);
+        -o-transform: translateX(50px);
+    }
+    .personal-info::after,
+    .contacts::after {
+        width: 199px ;
+    }
+    .contacts:hover p:nth-child(1):after{
+        width: 198px;
+    }
+    .edu-section {
+        transform: translateX(-14px);
+        -webkit-transform: translateX(-14px);
+        -moz-transform: translateX(-14px);
+        -ms-transform: translateX(-14px);
+        -o-transform: translateX(-14px);
+    }
+    .me {
+        width: 200px;
+    }
+    .me::after {
+        content: '';
+        height: 16.5vh;
+        width: 1px;
+    }
+    .ccooddee {
+        width: 58% !important;
+        font-size: 9.5px !important;
+    }
+    .ccooddee h1 + div {
+        padding: 0 !important;
+    }
+    .about-gmail i {
+        margin-right: 10px;
+    }
+    .about-gmail p {
+        margin-right: -15px;
+    }
+}
+@media (max-width: 810px) {
+    .about-page {
+        display: grid;
+        grid-template-columns: 190px 610px;
+    }
+    aside {
+        width: 195px;
+    }
+    .personal-info .information {
+        font-size: 14px;
+    }
+    .personal-info .infos {
+        margin-left: -9px;
+    }
+    .edu .arrow {
+        left: -1px;
+    }
+    
+    .contact-par::after,
+    .contacts::after {
+        width: 145px;
+    }
+    .contacts:hover p:nth-child(1):after{
+        width: 150px;
+    }
+    .the-edu::after {
+        left: -14px !important;
+        width: 150px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-page {
+        display: grid;
+        grid-template-columns: 384px calc(768px - 348px);
+    }
+    .ccooddee {
+        display: none;
+    }
+    aside {
+        width: 348px;
+    }
+    .div-two {
+        position: absolute;
+        display: grid;
+        grid-auto-rows: min-content;
+        justify-content: center;
+        width: 350px !important;
+    }
+
+    .div-two-hidden {
+        display: none;
+    }
+    .div-two .personal-info,
+    .div-two .contacts {
+        left: -55px;
+    }
+
+    .div-two .personal-info::after,
+    .div-two .contacts::after {
+        width: 298px;
+    }
+    .the-edu::after {
+        width: 298px !important;
+    }
+    .div-two .contacts p {
+        top: 2px;
+    }
+    .contacts:hover p:nth-child(1):after {
+        width: 298px !important;
+    }
+    .contact-list a {
+        color: var(--text-color);
+        
+    }
+    .about-gmail {
+        max-width: 90%;
+    }
+    .about-gmail i {
+        transform: translateX(5px);
+        -webkit-transform: translateX(5px);
+        -moz-transform: translateX(5px);
+        -ms-transform: translateX(5px);
+        -o-transform: translateX(5px);
+    }
+    .about-gmail p {
+        transform: translateX(15px);
+        font-size: 14px;
+        -webkit-transform: translateX(15px);
+        -moz-transform: translateX(15px);
+        -ms-transform: translateX(15px);
+        -o-transform: translateX(15px);
+    }
+    .contact-list .about-social {
+        align-self: start;
+        transform: translateX(20px);
+        -webkit-transform: translateX(20px);
+        -moz-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        -o-transform: translateX(20px);
+    }
+    .contact-list .about-social i {
+        margin-left: 15px;
+    }
+    .the-edu div p::before {
+        content: '';
+        position: absolute;
+        left: -17px;
+        top: 5px;
+        border-top: transparent 4px solid;
+        border-bottom: transparent 4px solid;
+        border-left: #fff 6px solid;
+    }
+    .personal-info:hover .the-edu::after {
+        display: block;
+        content: '';
+        height: 1px;
+        width: 294px;
+        background-color: var(--text-color);
+        position: absolute;
+        left: -60px;
+        bottom: -15px;
+    
+    }
+    .s-col {
+        display: none;
+    }
+    .about-content {
+        height: 80vh;
+    }
+    
+    .edu-section {
+        transform: translateX(-38px);
+        -webkit-transform: translateX(-38px);
+        -moz-transform: translateX(-38px);
+        -ms-transform: translateX(-38px);
+        -o-transform: translateX(-38px);
+}
+    .about-content .me {
+        width: 320px;
+        font-size: 14px;
+        font-weight: 700;
+        border-right: none;
+        transform: translate(-20px, 10px);
+        -webkit-transform: translate(-20px, 10px);
+        -moz-transform: translate(-20px, 10px);
+        -ms-transform: translate(-20px, 10px);
+        -o-transform: translate(-20px, 10px);
+    }
+}
+@media (max-width: 690px) {
+    .about-page {
+        display: grid;
+        grid-template-columns: 300px 390px;
+    }
+    aside {
+        width: 300px;
+    }
+    .me {
+        width: 390px;
+        transform: translate(20px, 20px) !important;
+        -webkit-transform: translate(20px, 20px) !important;
+        -moz-transform: translate(20px, 20px) !important;
+        -ms-transform: translate(20px, 20px) !important;
+        -o-transform: translate(20px, 20px) !important;
+    }
+    .div-two .personal-info::after,
+    .div-two .contacts::after {
+        width: 250px ;
+    }
+    .the-edu::after {
+        width: 250px;
+    }
+    .contacts:hover p:nth-child(1):after {
+        width: 250px !important;
+    }
+    .edu-section {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+    }
+}
+
+@media (max-width: 643px) {
+    .about-page {
+        display: grid;
+        grid-template-columns: 250px 393px;
+    }
+    aside {
+        width: 250px;
+    }
+    .me {
+        width: 393px;
+        transform: translate(20px, 20px) !important;
+        -webkit-transform: translate(20px, 20px) !important;
+        -moz-transform: translate(20px, 20px) !important;
+        -ms-transform: translate(20px, 20px) !important;
+        -o-transform: translate(20px, 20px) !important;
+    }
+    .div-two .personal-info::after,
+    .div-two .contacts::after {
+        width: 200px ;
+    }
+    .the-edu::after {
+        width: 200px ;
+    }
+    .contacts:hover p:nth-child(1):after {
+        width: 200px !important;
+    }
+    .edu-section {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+    }
+    .about-gmail i {
+        margin-left: -35px !important;
+    }
+    .about-gmail p {
+        font-size: 13px;
+        margin-left: -20px !important;
+    }
+}
+
+@media (max-width: 595px) {
+    .about-page {
+        display: grid;
+        grid-template-columns: 200px 395px;
+    }
+    aside {
+        width: 200px;
+    }
+    .me {
+        width: 395px;
+        transform: translate(20px, 20px) !important;
+        -webkit-transform: translate(20px, 20px) !important;
+        -moz-transform: translate(20px, 20px) !important;
+        -ms-transform: translate(20px, 20px) !important;
+        -o-transform: translate(20px, 20px) !important;
+}
+    .div-two .personal-info::after,
+    .div-two .contacts::after {
+        width: 150px ;
+    }
+    .the-edu::after {
+        width: 150px;
+    }
+    .contacts:hover p:nth-child(1):after {
+        width: 150px !important;
+    }
+    .edu-section {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+    }
+    .contact-list div {
+        max-width: 100px;
+    }
+
+    .about-gmail {
+        display: flex;
+        flex-direction: column;
+        transform: translateX(30px);
+        -webkit-transform: translateX(30px);
+        -moz-transform: translateX(30px);
+        -ms-transform: translateX(30px);
+        -o-transform: translateX(30px);
+    }
+    .about-gmail i {
+        /* margin-left: -35px !important; */
+        font-size: 15px;
+    }
+    .about-gmail p {
+        font-size: 11px;
+        margin-left: -15px !important;
+    }
+}
+
+@media (max-width: 540px) {
+    .about-page {
+        display: grid;
+        grid-template-columns: 200px 340px;
+    }
+    aside {
+        width: 200px;
+    }
+    .me {
+        width: 340px;
+        transform: translate(7px, 7px) !important;
+        -webkit-transform: translate(7px, 7px) !important;
+        -moz-transform: translate(7px, 7px) !important;
+        -ms-transform: translate(7px, 7px) !important;
+        -o-transform: translate(7px, 7px) !important;
+    }
+    .me {
+        font-size: 12px !important;
+    }
+}
+
+
+@media (max-width: 505px) {
+    .about-page {
+        display: grid;
+        grid-template-columns: 180px 325px;
+    }
+    aside {
+        width: 180px;
+    }
+    .personal-info,
+    .contacts {
+        width: 130px;
+        transform: translateX(13px);
+        -webkit-transform: translateX(13px);
+        -moz-transform: translateX(13px);
+        -ms-transform: translateX(13px);
+        -o-transform: translateX(13px);
+    }
+    .contact-par {
+        transform:  translateX(15px);
+        -webkit-transform:  translateX(15px);
+        -moz-transform:  translateX(15px);
+        -ms-transform:  translateX(15px);
+        -o-transform:  translateX(15px);
+}
+    .contact-par::before {
+        left: 0 !important;
+    }
+    .personal-par::before {
+        left: -10px !important;
+    }
+    .information {
+        font-size: 12px !important;
+    }
+    .div-two .personal-info::after {
+        bottom: 0px;
+    }
+    .div-two .personal-info:hover::after {
+        bottom: 10px;
+    }
+    /* .div-two .contacts::after {
+        left: 0;
+    } */
+    .div-two .personal-info::after,
+    .div-two .contacts::after {
+        width: 130px ;
+    }
+    .the-edu::after {
+        width: 130px; 
+        left: -1px;
+        bottom: -50px;
+    }
+    .contacts:hover p:nth-child(1):after {
+        width: 130px !important;
+        left: -20px;
+    }
+    .contacts {
+        padding-left: 5px;
+    }
+    .me {
+        width: 340px;
+        transform: translate(0) !important;
+        -webkit-transform: translate(0) !important;
+        -moz-transform: translate(0) !important;
+        -ms-transform: translate(0) !important;
+        -o-transform: translate(0) !important;
+        font-size: 12px !important;
+    }
+    .contact-list div {
+        font-size: 13px !important;
+    }
+    .about-gmail p {
+        font-size: 10px !important;
+        transform: translateX(8px);
+        -webkit-transform: translateX(8px);
+        -moz-transform: translateX(8px);
+        -ms-transform: translateX(8px);
+        -o-transform: translateX(8px);
+    }
+}
+
+@media (max-width: 425px) {
+    .about-page {
+        grid-template-columns: 100vw;
+        grid-template-rows: 150px 170px;
+        height: 81vh;
+        position: relative;
+    }
+    .edu-section {
+        display: none;
+    }
+    .div-one {
+        height: 81vh;
+    }
+    .me {
+        position: absolute;
+        left: 50px;
+    }
+    aside {
+        border-right: none;
+    }
+    
+    .div-two .personal-info,
+    .div-two .contacts {
+        left: 100px;
+        width: 100vw;
+    }
+    .div-two .personal-info::after,
+    .div-two .contacts::after {
+        left: -27px;
+        width: 376px;
+    }
+}
+
+@media (max-width: 375px) {
+    .about-page {
+        grid-template-columns: 100vw;
+        grid-template-rows: 70px 276px;
+        height: 118vw;
+        position: relative;
+    }
+    .div-one {
+        height: 81vh;
+    
+    }
+    .div-two .personal-info::after {
+        bottom: 0px !important;
+    }
+    .div-two .personal-info::after,
+    .div-two .contacts::after {
+        left: -16px;
+        width: 325px;
+        
+    }
+    .div-two {
+        background-color: #123;
+        width: 325px !important;
+        transform: translateX(50px);
+        -webkit-transform: translateX(50px);
+        -moz-transform: translateX(50px);
+        -ms-transform: translateX(50px);
+        -o-transform: translateX(50px);
+        z-index: 100;
+    }
+    .contacts:hover p:nth-child(1):after {
+        width: 325px !important;
+        left: -35px;
+    }
+    .personal-info,
+    .contacts {
+        transform: translateX(-60px);
+        -webkit-transform: translateX(-60px);
+        -moz-transform: translateX(-60px);
+        -ms-transform: translateX(-60px);
+        -o-transform: translateX(-60px);
+    }
+    .div-two .personal-info:hover .the-edu::after {
+        bottom: -30px;
+        width: 322px;
+    }
+    .contact-list .about-gmail {
+        display: flex;
+        flex-direction: row;
+    }
+    .contact-list .about-gmail i {
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+        -moz-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+        -o-transform: translateX(-20px);
+    }
+    .contact-list .about-gmail p {
+        left: 35px;
+    }
+    .contact-list .about-gmail p,
+    .contact-list div {
+        font-size: 15px !important;
+        font-weight: 700;
+    }
+    .about-content .me {
+        font-size: 13px;
+        font-weight: 200;
+        position: absolute;
+        left: 21%;
+        top: 30%;
+    }
+    .edu-section {
+        border-bottom: none !important;
+    }
+    .ddiv {
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .about-page {
+        height: 81vh;
+    }
+    .div-one {
+        height: 81vh;
+        width: 60px;
+    }
+    .div-two {
+        background-color: #123;
+        width: 260px !important;
+        transform: translateX(60px);
+        -webkit-transform: translateX(60px);
+        -moz-transform: translateX(60px);
+        -ms-transform: translateX(60px);
+        -o-transform: translateX(60px);
+        z-index: 100;
+    }
+    .contacts:hover p:nth-child(1):after {
+        width: 262px !important;
+        left: -23px;
+    }
+    .personal-info,
+    .contacts {
+        transform: translateX(-60px);
+        -webkit-transform: translateX(-60px);
+        -moz-transform: translateX(-60px);
+        -ms-transform: translateX(-60px);
+        -o-transform: translateX(-60px);
+    }
+    .personal-info,
+    .contacts {
+        transform: translateX(-68px);
+        -webkit-transform: translateX(-68px);
+        -moz-transform: translateX(-68px);
+        -ms-transform: translateX(-68px);
+        -o-transform: translateX(-68px);
+    }
+    .div-two .personal-info::after,
+    .div-two .contacts::after {
+        left: -3px !important;
+        width: 262px;
+    }
+    .personal-info:hover .the-edu::after {
+        width: 262px !important;
+        left: -3px !important;
+    }
+    .contact-list {
+        transform: translateX(5px) !important;
+        -webkit-transform: translateX(5px) !important;
+        -moz-transform: translateX(5px) !important;
+        -ms-transform: translateX(5px) !important;
+        -o-transform: translateX(5px) !important;
+    }
+    .about-gmail p {
+        left: 54px !important;
+    }
+    .contact-list {
+        backdrop-filter: blur(10px);
+        transform: translateX(40px);
+        -webkit-transform: translateX(40px);
+        -moz-transform: translateX(40px);
+        -ms-transform: translateX(40px);
+        -o-transform: translateX(40px);
+    }
+    .about-content .me {
+        font-size: 12px;
+        font-weight: 200;
+        position: absolute;
+        left: 18%;
+    }
+    .about-gmail i {
+        transform: translateX(-3px);
+        -webkit-transform: translateX(-3px);
+        -moz-transform: translateX(-3px);
+        -ms-transform: translateX(-3px);
+        -o-transform: translateX(-3px);
+    }
+    .about-gmail p {
+        transform: translateX(-13px);
+        -webkit-transform: translateX(-13px);
+        -moz-transform: translateX(-13px);
+        -ms-transform: translateX(-13px);
+        -o-transform: translateX(-13px);
+}
 }
