@@ -1,209 +1,208 @@
-aside {
-    width: 302px;
-    height: calc(100vh - 50px);
+.body {
     display: grid;
-    grid-template-rows: 50px 50px;
-    position: relative;
-    border-right: 1px solid var(--text-color);
+    grid-template-columns: 311px calc(100vw - 311px) 1fr;
+}
+
+aside {
+    display: grid;
+    grid-auto-rows: min-content;
+    border-right: 1px var(--text-color) solid;
 }
 aside .contacts,
 aside .find-me-in {
     display: flex;
     align-items: center;
+    padding: 20px;
     color: #fff;
     cursor: pointer;
-    position: relative;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
-}
-
-aside .contacts::before,
-aside .find-me-in::before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 6px solid #fff;
-    position: absolute;
-    top: 23px;
-    left: 30px;
-}
-aside .contacts:after,
-aside .find-me-in::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--text-color);
-    
+    border-bottom: 1px solid var(--text-color);
 }
 aside .contacts p,
 aside .find-me-in p {
-    margin-left: 60px;
+    transform: translateX(32.5px);
+    -webkit-transform: translateX(32.5px);
+    -moz-transform: translateX(32.5px);
+    -ms-transform: translateX(32.5px);
+    -o-transform: translateX(32.5px);
+    position: relative;
+}
+
+aside .contacts .list-name::before,
+aside .find-me-in .list-name::before {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 4px;
+    border-top: 5px solid transparent;
+    border-left: 7px solid #fff;
+    border-bottom: 5px solid transparent;
+    border-top: 5px #fff transparent;
+}
+
+.contacts:hover .list-name::before,
+.find-me-in:hover .list-name::before {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
 }
 
 
-aside .contacts .user-phone {
+
+.user-phone,
+.social {
     display: none;
 }
-aside .contacts .user-phone div:nth-child(1),
-aside .contacts .user-phone div:nth-child(2) {
-    display: flex;
-    padding: 7px;
-}
-aside .contacts .user-phone div:nth-child(1) {
-    width: 100px;
-}
-aside:hover .user-phone {
-    display: block;
-    position: absolute;
-    top: 40px;
-    left: 0;
-    padding: 25px 25px 20px;
-    color: var(--text-color);
-}
-aside:hover .user-phone::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    width: calc(100% + 85px);
-    height: 1px;
-    background-color: var(--text-color);
-}
-aside .contacts .user-phone div:nth-child(1) p,
-aside .contacts .user-phone div:nth-child(2) p {
-    margin-left: 20px;
-}
-aside:hover .find-me-in {
-    margin-top: 90px;
-}
-aside:hover .find-me-in::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--text-color);
-}
 
-aside:hover .find-me-in p {
+.contacts:hover .user-phone,
+.find-me-in:hover .social {
+    display: flex;
+    flex-direction: column;
     margin-top: 50px;
 }
 
-aside .find-me-in .social {
-    display: none;
-    padding: 20px;
+.contacts:hover .user-phone div,
+.find-me-in:hover .socials {
+    display: flex;
+    margin: 5px 0;
 }
 
-aside:hover .find-me-in .social {
-    display: flex;
-    flex-direction: column;
+.contacts:hover .list-name {
     position: absolute;
-    top: 50px;
+    top: 75px;
+}
+.find-me-in:hover .list-name {
+    position: absolute;
+    top: 134px;
+}
+.contacts:hover .list-name::after,
+.find-me-in:hover .list-name::after {
+    content: '';
+    width: 311px;
+    height: 1px;
+    background-color: var(--text-color);
+    position: absolute;
+    bottom: -20px;
+    left: -52px;
 }
 
-aside:hover .find-me-in .social .socials {
-    display: flex;
+
+.user-phone div,
+.find-me-in .socials {
     color: var(--text-color);
 }
-aside:hover .user-phone:hover,
-aside:hover .find-me-in .social .socials:hover {
+.user-phone div:hover,
+.socials:hover {
     color: #fff;
 }
 
-aside:hover .find-me-in .social .socials p {
-    margin-top: -25px;
-    margin-left: -10px;
-    padding: 25px;
+
+.empty {
+    height: 59px;
+    border-bottom: 1px solid var(--text-color);
 }
-
-
-section {
+.message-js-section {
     display: grid;
-    grid-template-rows: 50px auto;
-    grid-template-columns: 440px 559px 38px;
+    grid-template-columns: 500px 500px 40px;
+    grid-template-rows: 85vh;
 }
 
-section .empty {
-    grid-column: 1 / 4;
-    border-bottom: solid var(--text-color) 1px;
-}
-section .message {
+
+.message {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 30px 30px;
     border-right: 1px solid var(--text-color);
 }
-section .message form {
-    width: 80%;
+.message form div {
     display: flex;
     flex-direction: column;
+    margin: 30px 0px;
+}
+.message div label {
     color: var(--text-color);
-}
-section .message form div {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 20px;
-}
-section .message form div label {
+    font-weight: 800;
+    font-size: 17px;
     margin-bottom: 5px;
-    font-weight: 600;
 }
-section .message form div input {
-    padding: 13px 10px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    background-color: #020618;
-    color: var(--text-color);
+.message div input {
+    /*padding: 5px;
+    */height: 46px;
+    width: 370px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    background-color: #123;
+    padding: 10px;
+    color: #fff;
 }
-section .message form .the-message {
-    height: 100px;
+.message form {
+    margin-top: -70px;
 }
-section .message form .the-message::placeholder {
+.message form .the-message {
+    padding: 15px;
+    height: 150px;
+    color: #fff;
+
+}
+
+textarea {
+    background-color: #123;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+
+
+
+.message form .the-message::placeholder {
     position: absolute;
     top: 10px;
 }
-section .message form div + input {
-    width: 40%;
-    padding: 10px 5px;
+.message form div:nth-child(3) + input{
+    padding: 12px;
+    letter-spacing: 2px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    background-color: #62748E;
-    color: var(--text-color);
-    margin-left: 20px;
-    margin-top: 10px;
+    color: #62748E;
+    background-color: var(--text-color);
+    font-size: 13px;
+    font-weight: 700;
     cursor: pointer;
-}
-
-section .message form div + input:hover {
-    color: #000;
-    background-color: #FFB86A;
     transition: 0.3s;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
+    
+}
+.message form div:nth-child(3) + input:hover {
+    background-color: #FFB86A;
+    color: #000;
 }
 
+
 .js {
-    display: flex;
-    flex-direction: column;
-    padding: 12px 30px;
+    padding: 10px;
+    border-right: 1px solid var(--text-color);
 }
+
 .js div {
     color: var(--unique-color);
 }
@@ -224,64 +223,508 @@ section .message form div + input:hover {
 }
 
 
+.js div {
+    display: flex;
+}
+
+
+
+
+.side-zone {
+    position: relative;
+}
+.side-zone::before {
+    content: '';
+    background-color: var(--text-color);
+    height: 5px;
+    width: 22px;
+    position: absolute;
+    top: 7px;
+    left: 9px;
+}
+
+
+
+
 /* Responsive */
 
-@media (max-width: 1250px) {
-    aside .contacts{
-        width: 200px;
+@media (max-width: 2560px) {
+    .body {
+        display: grid;
+        grid-template-columns: 1000px 1560px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: repeat(2, 760px) 40px;
+    }
+    .contacts:hover .list-name::after,
+    .find-me-in:hover .list-name::after {
+        content: '';
+        width: 1000px;
+        height: 1px;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: -20px;
+        left: -52px;
     }
 }
 
-@media (max-width: 1115px) {
-    section .js{
-        width: 80%;
-        padding: 10px 10px;
-        font-size: 13px;
+@media (max-width: 1440px) {
+    .body {
+        display: grid;
+        grid-template-columns: 440px 1000px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: repeat(2, 475px) 50px;
+    }
+    .contacts:hover .list-name::after,
+    .find-me-in:hover .list-name::after {
+        content: '';
+        width: 440px;
+        height: 1px;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: -20px;
+        left: -52px;
     }
 }
 
-@media (max-width: 1020px) {
-    section .js {
-        display: none;
+@media (max-width: 1366px) {
+    .body {
+        display: grid;
+        grid-template-columns: 311px 1255px;
     }
-    section .message {
-        width: calc(100% + 350px);
+    .message-js-section {
+        display: grid;
+        grid-template-columns: repeat(2, 495px) 50px;
     }
-    section .message form {
-        justify-content: center;
-    }
-    section .js + div:nth-child(3) {
-        display: none;
-    }
-}
-
-@media (max-width: 910px) {
-    section .message form {
-        justify-content: center;
-    }
-    section .message {
-        width: calc(100% + 200px);
-        border-right: none;
+    .contacts:hover .list-name::after,
+    .find-me-in:hover .list-name::after {
+        content: '';
+        width: 311px;
+        height: 1px;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: -20px;
+        left: -52px;
     }
 }
 
-@media (max-width: 775px) {
-    section .message form {
-        justify-content: center;
+@media (max-width: 1303px) {
+    .body {
+        display: grid;
+        grid-template-columns: 311px 992px;
     }
-    section .message {
-        width: calc(100% + 70px);
+    .message-js-section {
+        display: grid;
+        grid-template-columns: repeat(2, 440px) 30px;
     }
 }
 
-@media (max-width: 660px) {
-    section .message form {
-        justify-content: center;
+
+@media(max-width: 1185px) {
+    .body {
+        display: grid;
+        grid-template-columns: 297px 888px;
     }
-    section .message {
-        width: 84%;
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 400px 434px 35px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .body {
+        display: grid;
+        grid-template-columns: 293px 837px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 350px 370px 50px;
+    }
+    .message form {
+        margin-left: -90px;
+    } 
+    .message form input:not(:nth-child(4)) {
+        width: 150%;
+    }
+    .message form textarea {
+        width: 150%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .body {
+        display: grid;
+        grid-template-columns: 289px 735px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: repeat(2, 353px) 30px;
+    }
+    .message form input {
+        width: 100%;
+    }
+    .message form {
+        margin-top: -30px;
+    }
+    .contacts:hover .list-name::after,
+    .find-me-in:hover .list-name::after {
+        content: '';
+        width: 290px;
+        height: 1px;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: -20px;
+        left: -52px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .body {
+        display: grid;
+        grid-template-columns: 284px 716px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 320px 320px 50px;
+    }
+    .message form {
+        margin-left: -90px;
+    } 
+    .message form input:not(:nth-child(4)) {
+        width: 130%;
+    }
+    .message form textarea {
+        width: 130%;
+    }
+    .side-zone::before {
+        content: '';
+        background-color: var(--text-color);
+        height: 5px;
+        width: 22px;
+        position: absolute;
+        top: 7px;
+        left: 15px;
+    }
+}
+@media(max-width: 940px) {
+    .body {
+        display: grid;
+        grid-template-columns: 279px 661px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 290px 300px 50px;
+    }
+    .message form {
+        margin-left: -60px;
+    } 
+    .message form input:not(:nth-child(4)) {
+        width: 130%;
+    }
+    .message form textarea {
+        width: 130%;
+    }
+}
+
+@media(max-width: 885px) {
+    .body {
+        display: grid;
+        grid-template-columns: 279px 661px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 260px 300px 50px;
+    }
+    .message form {
+        margin-left: -60px;
+    } 
+    .message form input:not(:nth-child(4)) {
+        width: 130%;
+    }
+    .message form textarea {
+        width: 130%;
+    }
+    .js-container {
+        width: 100%;
+    }
+}
+
+@media(max-width: 855px) {
+    .body {
+        display: grid;
+        grid-template-columns: 273px 582px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 220px 300px 50px;
+    }
+    .message form {
         margin-left: -10px;
+    } 
+    .message form input:not(:nth-child(4)) {
+        width: 100%;
+    }
+    .message form textarea {
+        width: 100%;
+    }
+    .js-container {
+        width: 100%;
     }
 }
 
+@media(max-width: 810px) {
+    .body {
+        display: grid;
+        grid-template-columns: 195px 615px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 237px 310px 50px;
+    }
+    .message form {
+        margin-left: -10px;
+    } 
+    .message form input:not(:nth-child(4)) {
+        width: 100%;
+    }
+    .message form textarea {
+        width: 100%;
+    }
+    .js-container {
+        width: 100%;
+    }
+}
 
+@media (max-width: 768px) {
+    .body {
+        display: grid;
+        grid-template-columns: 190px 578px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 210px 310px 40px;
+    }
+    .message form {
+        margin-top: -35px;
+        width: 100%;
+    }
+    .contacts:hover .list-name::after,
+    .find-me-in:hover .list-name::after {
+        content: '';
+        width: 193px;
+        height: 1px;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: -20px;
+        left: -52px;
+    }
+}
+
+@media(max-width: 715px) {
+    .body {
+        display: grid;
+        grid-template-columns: 187px 528px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 528px;
+        grid-template-rows: 500px;
+    }
+    .message form {
+        width: 80%;
+    }
+    .js {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .body {
+        display: grid;
+        grid-template-columns: 187px 463px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 463px;
+        grid-template-rows: 500px;
+    }
+    .message form {
+        width: 80%;
+    }
+    .js {
+        display: none;
+    }
+}
+
+@media (max-width: 590px) {
+    .body {
+        display: grid;
+        grid-template-columns: 187px 403px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 403px;
+        grid-template-rows: 500px;
+    }
+    .message form {
+        width: 80%;
+    }
+}
+@media (max-width: 540px) {
+    .body {
+        display: grid;
+        grid-template-columns: 187px 353px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 353px;
+        grid-template-rows: 500px;
+    }
+    .message form {
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    .body {
+        display: grid;
+        grid-template-columns: 187px 313px;
+    }
+    .message-js-section {
+        display: grid;
+        grid-template-columns: 313px;
+        grid-template-rows: 500px;
+    }
+    .message form {
+        width: 80%;
+    }
+}
+
+@media (max-width: 425px) {
+    .body {
+        display: grid;
+        grid-template-columns: 425px;
+    }
+    .js,
+    .js + div {
+        display: none;
+    }
+
+    .contacts:hover .list-name::after,
+    .find-me-in:hover .list-name::after {
+        content: '';
+        width: 425px;
+        height: 1px;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: -20px;
+        left: -52px;
+    }
+    .message form {
+        margin-left: 170px;
+        width: 300px;
+        margin-top: -30px;
+    }
+    .empty {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .body {
+        display: grid;
+        grid-template-columns: 400px;
+    }
+    .js,
+    .js + div {
+        display: none;
+    }
+
+    .contacts:hover .list-name::after,
+    .find-me-in:hover .list-name::after {
+        content: '';
+        width: 425px;
+        height: 1px;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: -20px;
+        left: -52px;
+    }
+    .message form {
+        margin-left: 110px;
+        width: 300px;
+        margin-top: -30px;
+    }
+    .empty {
+        display: none;
+    }
+}
+
+@media (max-width: 365px) {
+    .body {
+        display: grid;
+        grid-template-columns: 365px;
+    }
+    .js,
+    .js + div {
+        display: none;
+    }
+    .contacts:hover .list-name::after,
+    .find-me-in:hover .list-name::after {
+        content: '';
+        width: 425px;
+        height: 1px;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: -20px;
+        left: -52px;
+    }
+    .message form {
+        margin-left: 80px;
+        width: 300px;
+        margin-top: -30px;
+    }
+    .empty {
+        display: none;
+    }
+}
+
+@media (max-width: 345px) {
+    .body {
+        display: grid;
+        grid-template-columns: 345px;
+    }
+    .js,
+    .js + div {
+        display: none;
+    }
+    .contacts:hover .list-name::after,
+    .find-me-in:hover .list-name::after {
+        content: '';
+        width: 425px;
+        height: 1px;
+        background-color: var(--text-color);
+        position: absolute;
+        bottom: -20px;
+        left: -52px;
+    }
+    .message form {
+        margin-left: 10px;
+        width: 300px;
+        margin-top: -30px;
+    }
+    .empty {
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .message form {
+        margin-left: 0px;
+        width: 250px;
+        margin-top: -30px;
+    }
+}
